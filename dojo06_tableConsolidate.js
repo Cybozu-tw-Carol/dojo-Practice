@@ -21,13 +21,13 @@
         const table = record.車禍種類.value
         const data = table.reduce((acc, cur) => {
             const target = cur.value[key].value;
-            const count = Number(cur.value.件數.value);
+            const count = Number(cur.value.件數.value)||0;
 
             acc[target] = (acc[target] || 0) + count
 
             return acc
         }, {})
-        console.log(data);
+        console.log('data',data);
 
         targetField.forEach(field => {
             console.log(field);
